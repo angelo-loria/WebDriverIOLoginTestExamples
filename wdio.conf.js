@@ -57,9 +57,9 @@ exports.config = {
     maxInstances: 5,
     //
     browserName: 'chrome',
-    //  'goog:chromeOptions': {
-    //    args: ['--user-data-dir=~/.config/google-chrome']
-    //  },
+    'goog:chromeOptions': {
+      args: ['--remote-debugging-port=9222']
+    },
     acceptInsecureCerts: true
     // If outputDir is provided WebdriverIO can capture driver session logs
     // it is possible to configure which logTypes to include/exclude.
