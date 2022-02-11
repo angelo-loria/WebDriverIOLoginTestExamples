@@ -2,10 +2,12 @@
 import Page from './page'
 
 /**
- * sub page containing specific selectors and methods for a specific page
+ * selectors and methods for home page
  */
 class HomePage extends Page {
-  get loginButton () { return $('=sign_in') }
+  get loginButton () { return $('=Login') }
+  get signUpButton () { return $('=Sign Up') }
+  get title () { return 'Homepage | takehome' }
 
   async open () {
     await super.open('/')
