@@ -12,8 +12,7 @@ jobs:
             node-version: 16.3.0
         - name: Install
           run: npm install
-        - name: setup chrome
-          uses: browser-actions/setup-chrome@latest
-          run: chrome
+        - uses: browser-actions/setup-chrome@latest
+        - run: chrome
         - name: Test
           run: npm test
