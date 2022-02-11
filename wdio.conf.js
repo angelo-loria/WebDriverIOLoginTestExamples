@@ -58,7 +58,7 @@ exports.config = {
     //
     browserName: 'chrome',
     'goog:chromeOptions': {
-      args: ['--remote-debugging-port=9222']
+      // args: ['--headless']
     },
     acceptInsecureCerts: true
     // If outputDir is provided WebdriverIO can capture driver session logs
