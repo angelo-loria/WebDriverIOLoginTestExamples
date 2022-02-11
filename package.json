@@ -10,7 +10,8 @@
             "$",
             "$$",
             "browser",
-            "expect"
+            "expect",
+            "baseUrl"
         ]
     },
     "devDependencies": {
