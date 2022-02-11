@@ -58,7 +58,7 @@ exports.config = {
     //
     browserName: 'chrome',
     //  'goog:chromeOptions': {
-    //    args: ['--headless']
+    //    args: ['--user-data-dir=~/.config/google-chrome']
     //  },
     acceptInsecureCerts: true
     // If outputDir is provided WebdriverIO can capture driver session logs
