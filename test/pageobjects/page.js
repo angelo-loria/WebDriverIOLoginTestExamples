@@ -10,4 +10,12 @@ export default class Page {
   async open (path) {
     await browser.url(path)
   }
+
+  /**
+   * Generate random email string using result of Data.now() and base36 conversion
+   * @returns string - random email
+   */
+  getRandomEmail () {
+    return Date.now().toString(36) + '@test.com'
+  }
 }

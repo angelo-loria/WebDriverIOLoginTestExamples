@@ -2,16 +2,18 @@
 import Page from './page'
 
 /**
- * selectors and methods for reset password page
+ * selectors and methods for sign up page
  */
-class SignUp extends Page {
+class SignUpPage extends Page {
+  get allowMarketingCheckbox () { return $('#allow_marketing_emails') }
   get containerHeading () { return $('.heading3') }
-  get emailInput () { return $('#email') }
-  get emailToReceiveResetText () { return $('.bodySmallSemiBold output') }
-  get emailSentNotification () { return $('.bodyMainBold=Email sent') }
-  get nextButton () { return $('[data-testid="login-button"]') }
-  get resendEmailButton () { return $('.button=Resend Email') }
+  get emailInput () { return $('#user_email') }
+  get fullNameInput () { return $('#user_name') }
+  get headingErrorText () { return $('.bodySmall') }
+  get passwordInput () { return $('#password') }
+  get signUpButton () { return $('[data-testid="signup-button"]') }
+
   get url () { return 'https://sso.zeachable.com/secure/123/identity/sign_up/with_email' }
 }
 
-export default new SignUp()
+export default new SignUpPage()
