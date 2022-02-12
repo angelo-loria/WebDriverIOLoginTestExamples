@@ -10,3 +10,19 @@ This is a [WebdriverIO](https://webdriver.io/docs/what-is-webdriverio) project, 
 * WebdriverIO is built on top of NodeJS
 * WebdriverIO simplifies the initial project configuration and ongoing development with a vast amount of helper functions, test runners, assertion libraries, and a rich set of APIs built into the framework
 * There are a large amount of community-created plugins for extendability, an active Gitter channel for support, active ongoing development, and great documentation
+
+### Project Structure
+
+    teachable-take-home
+    ├─> .github/
+    │   └─> workflows/              # Github Actions workflows 
+    ├─> .vscode/                    # VSCode config files
+    ├─> test/
+    │   ├─> pageobjects/            # page object files
+    │   ├─> resources/              # test data files, etc.
+    │   └─> specs/                  # test spec files
+    ├── babel.config.js
+    ├── package-lock.json
+    ├── package.json
+    ├── README.md
+    └── wdio.conf.js
