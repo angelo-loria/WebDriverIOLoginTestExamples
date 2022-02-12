@@ -3,7 +3,7 @@
 [![e2e-test](https://github.com/angelo-loria/teachable-take-home/actions/workflows/e2e-test.yaml/badge.svg)](https://github.com/angelo-loria/teachable-take-home/actions/workflows/e2e-test.yaml)
 
 
-This is a [WebdriverIO](https://webdriver.io/docs/what-is-webdriverio) project, written in JavaScript, structured using the [page object design pattern](https://webdriver.io/docs/pageobjects), with Github Actions providing remote test execution. Tests are executed in Chrome via [ChromeDriver](https://sites.google.com/chromium.org/driver/).
+This is a [WebdriverIO](https://webdriver.io/docs/what-is-webdriverio) project, written in JavaScript, utilizing the [mochaJS](https://mochajs.org/) testing framework, structured in a [page object design pattern](https://webdriver.io/docs/pageobjects), with [Github Actions](https://github.com/angelo-loria/teachable-take-home/actions/workflows/e2e-test.yaml) providing remote test execution. Tests are executed in Chrome via [ChromeDriver](https://sites.google.com/chromium.org/driver/).
 
 ### Why WebdriverIO?
 * At its core, WebdriverIO leverages the power of the [WebDriver protocol](https://w3c.github.io/webdriver/), ensuring compatibity with the official W3C web standard and support in all major browsers
