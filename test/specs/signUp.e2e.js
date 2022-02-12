@@ -1,18 +1,31 @@
+import DashboardPage from '../pageobjects/dashboard.page'
 import HomePage from '../pageobjects/home.page'
 import SignUpPage from '../pageobjects/signUp.page'
-import DashboardPage from '../pageobjects/dashboard.page'
 import tData from '../resources/credentials.json'
 
-describe('login page', () => {
+describe('sign up page', () => {
+  // open sign up page for each test
   beforeEach(async () => {
     await HomePage.open()
+
+    await expect(HomePage.headlineText).toHaveText('Welcome to takehome')
     await HomePage.signUpButton.click()
 
     await expect(browser).toHaveUrl(SignUpPage.url)
   })
 
+  // close browser for each test
   afterEach(async () => {
     await browser.reloadSession()
+  })
+
+  it('should contain no broken links', async () => {
+    const links = await HomePage.getLinks()
+    for (let link of links) {
+      link = (link.startsWith('/')) ? 'https://sso.zeachable.com' + link : link
+      expect(await HomePage.isLinkBroken(link))
+        .toBe(true, `${link} did not return 200 status`)
+    }
   })
 
   it('should allow signup with required fields', async () => {
@@ -22,7 +35,8 @@ describe('login page', () => {
     await SignUpPage.allowMarketingCheckbox.click()
     await SignUpPage.signUpButton.click()
 
-    await expect(DashboardPage.bannerWarning).toHaveText('Please confirm your email to fully activate your account. ' +
+    await expect(DashboardPage.bannerWarning).toHaveText(
+      'Please confirm your email to fully activate your account. ' +
       'You can do this by clicking the link in the email confirmation we sent you.')
   })
 
@@ -33,6 +47,7 @@ describe('login page', () => {
     await SignUpPage.allowMarketingCheckbox.click()
     await SignUpPage.signUpButton.click()
 
-    await expect(SignUpPage.headingErrorText).toHaveText('Email is already in use. Please log in to your account.')
+    await expect(SignUpPage.headingErrorText).toHaveText(
+      'Email is already in use. Please log in to your account.')
   })
 })
