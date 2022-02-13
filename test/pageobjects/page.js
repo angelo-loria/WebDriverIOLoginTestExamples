@@ -5,6 +5,8 @@ import axios from 'axios'
 * that is shared across all page objects
 */
 export default class Page {
+  get ssoBaseUrl () { return 'https://sso.zeachable.com/secure/123/identity' }
+
   /**
    * Gets urls of links on page
    * @returns {Array} link urls

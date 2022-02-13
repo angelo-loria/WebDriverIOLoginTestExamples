@@ -13,7 +13,7 @@ class SignUpPage extends Page {
   get passwordInput () { return $('#password') }
   get signUpButton () { return $('[data-testid="signup-button"]') }
 
-  get url () { return 'https://sso.zeachable.com/secure/123/identity/sign_up/with_email' }
+  get url () { return this.ssoBaseUrl + '/sign_up/with_email' }
 }
 
 export default new SignUpPage()

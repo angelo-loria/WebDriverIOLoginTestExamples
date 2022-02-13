@@ -10,7 +10,7 @@ class LoginPage extends Page {
   get loginButton () { return $('[data-testid="login-button"]') }
   get passwordInput () { return $('#password') }
 
-  get url () { return 'https://sso.zeachable.com/secure/123/identity/login' }
+  get url () { return this.ssoBaseUrl + '/login' }
 }
 
 export default new LoginPage()

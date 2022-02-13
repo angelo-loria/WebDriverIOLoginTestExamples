@@ -12,7 +12,7 @@ class ResetPasswordPage extends Page {
   get nextButton () { return $('[data-testid="login-button"]') }
   get resendEmailButton () { return $('.button=Resend Email') }
 
-  get url () { return 'https://sso.zeachable.com/secure/123/identity/forgot_password' }
+  get url () { return this.ssoBaseUrl + '/forgot_password' }
 }
 
 export default new ResetPasswordPage()
