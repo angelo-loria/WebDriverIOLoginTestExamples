@@ -14,7 +14,7 @@ This is a [WebdriverIO](https://webdriver.io/docs/what-is-webdriverio) project, 
     ├─> .vscode/                    # VSCode config files
     ├─> test/
     │   ├─> pageobjects/            # page object files
-    │   ├─> resources/              # test data files, etc.
+    │   ├─> resources/              # test data files
     │   ├─> specs/                  # test spec files
     │   └─> unit/                   # unit test files    
     ├── babel.config.js
