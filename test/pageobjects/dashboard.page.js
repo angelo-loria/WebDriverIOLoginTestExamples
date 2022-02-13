@@ -16,7 +16,7 @@ class DashboardPage extends Page {
   }
 
   /**
-   * Opens profile dropdown and clicks link
+   * opens profile dropdown and clicks link
    * @param {string} linkText text of link to click
    */
   async clickProfileDropdownLink (linkText) {

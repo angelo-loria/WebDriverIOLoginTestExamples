@@ -15,7 +15,6 @@ describe('login page', () => {
     await expect(browser).toHaveUrl(LoginPage.url)
   })
 
-  // reset close browser in between each test
   afterEach(async () => {
     await browser.reloadSession()
   })

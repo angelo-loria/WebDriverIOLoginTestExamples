@@ -8,7 +8,7 @@ export default class Page {
   get ssoBaseUrl () { return 'https://sso.zeachable.com/secure/123/identity' }
 
   /**
-   * Gets urls of links on page
+   * gets urls of links on page
    * @returns {Array} link urls
    */
   async getLinks () {
@@ -16,7 +16,7 @@ export default class Page {
   }
 
   /**
-   * Makes get request to url and returns status code
+   * makes get request to url and returns status code
    * @param {string} url
    * @returns {number} status code
    */
@@ -36,7 +36,7 @@ export default class Page {
   }
 
   /**
-    * Opens a sub page of the page
+    * opens a sub page of the page
     * @param path path of the sub page (e.g. /path/to/page.html)
     */
   async open (path) {
@@ -44,7 +44,7 @@ export default class Page {
   }
 
   /**
-   * Generate random email string using result of Data.now() and base36 conversion
+   * generate random email string using result of Data.now() and base36 conversion
    * @returns {string} - random email
    */
   getRandomEmail () {
