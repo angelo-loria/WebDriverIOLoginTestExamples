@@ -1,7 +1,7 @@
-import Page from '../pageobjects/page'
 import MockAdapter from 'axios-mock-adapter'
-import axios from 'axios'
+import Page from '../pageobjects/page'
 import assert from 'assert'
+import axios from 'axios'
 
 describe('unit test', () => {
   const page = new Page()
