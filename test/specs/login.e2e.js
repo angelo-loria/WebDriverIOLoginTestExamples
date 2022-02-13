@@ -24,7 +24,7 @@ describe('login page', () => {
     const links = await LoginPage.getLinks()
     for (let link of links) {
       link = (link.startsWith('/')) ? 'https://sso.zeachable.com' + link : link
-      expect(await LoginPage.isLinkBroken(link))
+      expect(await LoginPage.isLinkStatusOk(link))
         .toBe(true, `${link} did not return 200 status`)
     }
   })
