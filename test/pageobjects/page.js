@@ -25,11 +25,11 @@ export default class Page {
 
   /**
    * checks for response code of 200 on link
-   * @param {string} link
+   * @param {string} url
    * @returns {boolean}
    */
-  async isLinkBroken (link) {
-    const status = await this.getStatusCode(link)
+  async isLinkStatusOk (url) {
+    const status = await this.getStatusCode(url)
     return (status === 200)
   }
 
