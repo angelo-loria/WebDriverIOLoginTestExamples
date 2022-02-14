@@ -10,6 +10,7 @@ class SignUpPage extends Page {
   get emailInput () { return $('#user_email') }
   get fullNameInput () { return $('#user_name') }
   get headingErrorText () { return $('.bodySmall') }
+  get pageErrorText () { return $('h1.page-error') }
   get passwordInput () { return $('#password') }
   get signUpButton () { return $('[data-testid="signup-button"]') }
 

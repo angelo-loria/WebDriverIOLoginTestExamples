@@ -22,6 +22,7 @@ describe('sign up page', () => {
     const links = await HomePage.getLinkUrls()
     for (let link of links) {
       link = (link.startsWith('/')) ? 'https://sso.zeachable.com' + link : link
+
       expect(await HomePage.isLinkStatusOk(link))
         .toBe(true, `${link} did not return 200 status`)
     }
@@ -37,6 +38,15 @@ describe('sign up page', () => {
     await expect(DashboardPage.bannerWarning).toHaveText(
       'Please confirm your email to fully activate your account. ' +
       'You can do this by clicking the link in the email confirmation we sent you.')
+  })
+
+  it('should not allow signup with missing required fields', async () => {
+    await SignUpPage.fullNameInput.setValue(tData.fullName)
+    await SignUpPage.passwordInput.setValue(tData.password)
+    await SignUpPage.allowMarketingCheckbox.click()
+    await SignUpPage.signUpButton.click()
+
+    await expect(SignUpPage.pageErrorText).toHaveText('Our apologies! We were unable to process your request')
   })
 
   it('should not allow signup with email already in use', async () => {

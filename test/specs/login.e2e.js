@@ -23,9 +23,18 @@ describe('login page', () => {
     const links = await LoginPage.getLinkUrls()
     for (let link of links) {
       link = (link.startsWith('/')) ? 'https://sso.zeachable.com' + link : link
+
       expect(await LoginPage.isLinkStatusOk(link))
         .toBe(true, `${link} did not return 200 status`)
     }
+  })
+
+  it('should not login with invalid credentials', async () => {
+    await LoginPage.emailInput.setValue(tData.email + 'invalid-email')
+    await LoginPage.passwordInput.setValue(tData.password)
+    await LoginPage.loginButton.click()
+
+    await expect(LoginPage.headingErrorText).toHaveText('Your email or password is incorrect.')
   })
 
   it('should login with valid credentials and logout to home page', async () => {
@@ -37,6 +46,7 @@ describe('login page', () => {
     await expect(DashboardPage.signedInDirectoryDiv).toBeDisplayed()
 
     await DashboardPage.clickProfileDropdownLink('Log Out')
+
     await expect(HomePage.headlineText).toHaveText('Welcome to takehome')
   })
 
@@ -52,6 +62,19 @@ describe('login page', () => {
     await expect(ResetPasswordPage.emailToReceiveResetText).toHaveText(tData.email)
 
     await ResetPasswordPage.resendEmailButton.click()
+
     await expect(ResetPasswordPage.emailSentNotification).toBeDisplayed()
+  })
+
+  it('remember me should be default and set cookie', async () => {
+    await LoginPage.emailInput.setValue(tData.email)
+    await LoginPage.passwordInput.setValue(tData.password)
+
+    await expect(LoginPage.rememberMeCheckBox).toBeSelected()
+
+    await LoginPage.loginButton.click()
+
+    const cookiesArr = await browser.getCookies('sk_x5rn340m_remember_me')
+    await expect(cookiesArr).toHaveLength(1)
   })
 })
