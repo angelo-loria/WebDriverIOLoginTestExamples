@@ -1,0 +1,14 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "name": "test",
+            "type": "node",
+            "request": "launch",
+            "autoAttachChildProcesses": true,
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run-script", "test"],
+            "console": "integratedTerminal"
+        }
+    ]
+}
