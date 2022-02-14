@@ -20,7 +20,7 @@ describe('login page', () => {
   })
 
   it('should contain no broken links', async () => {
-    const links = await LoginPage.getLinks()
+    const links = await LoginPage.getLinkUrls()
     for (let link of links) {
       link = (link.startsWith('/')) ? 'https://sso.zeachable.com' + link : link
       expect(await LoginPage.isLinkStatusOk(link))

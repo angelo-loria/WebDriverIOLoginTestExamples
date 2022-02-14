@@ -11,7 +11,7 @@ export default class Page {
    * gets urls of links on page
    * @returns {Array} link urls
    */
-  async getLinks () {
+  async getLinkUrls () {
     return await $$('a').map(link => link.getAttribute('href'))
   }
 

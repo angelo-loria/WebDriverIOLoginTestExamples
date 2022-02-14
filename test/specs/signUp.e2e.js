@@ -19,7 +19,7 @@ describe('sign up page', () => {
   })
 
   it('should contain no broken links', async () => {
-    const links = await HomePage.getLinks()
+    const links = await HomePage.getLinkUrls()
     for (let link of links) {
       link = (link.startsWith('/')) ? 'https://sso.zeachable.com' + link : link
       expect(await HomePage.isLinkStatusOk(link))
