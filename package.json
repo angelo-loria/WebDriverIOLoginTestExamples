@@ -24,7 +24,7 @@
         "@wdio/spec-reporter": "^7.16.14",
         "axios": "^0.25.0",
         "axios-mock-adapter": "^1.20.0",
-        "chromedriver": "^98.0.0",
+        "chromedriver": "latest",
         "standard": "^16.0.4",
         "wdio-chromedriver-service": "^7.2.6"
     },
